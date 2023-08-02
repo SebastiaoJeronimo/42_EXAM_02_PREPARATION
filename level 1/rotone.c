@@ -41,8 +41,24 @@ int main(int argc, char **argv)
             c = argv[1][j];
             if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
             {
-                
+                if(c >= 'a' && c <= 'z'){
+                    if (c = 'z')
+                    {
+                        c = 'a';
+                    }else{
+                        c = c + 1;
+                    }
+                }
+                if(c >= 'A' && c <= 'Z'){
+                    if (c = 'Z')
+                    {
+                        c = 'A';
+                    }else{
+                        c = c + 1;
+                    }
+                }
             }
+            write (1, &c , 1);
             j++;
         }
     }

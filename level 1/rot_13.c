@@ -42,7 +42,7 @@ int main(int argc, char **argv)
         while(argv[1][j])
         {
             c = argv[1][j];
-            if ((c >= 'a' && c <= 'z')||(c>= 'A' && c <= 'Z'))
+            if ((c >= 'a' && c <= 'z') || (c>= 'A' && c <= 'Z'))
             {
                 if((c >= 'a' && c <= 'z'))
                 {
@@ -54,19 +54,18 @@ int main(int argc, char **argv)
                         c = c + 13;
                     }
                 }
-                if((c >= 'a' && c <= 'z'))
+                if((c >= 'A' && c <= 'Z'))
                 {
-                    if(c >= 'n')
+                    if(c >= 'N')
                     {
-                        shift = 'z' - c;
-                        c = 'a' + (13 - shift);
+                        shift = 'Z' - c;
+                        c = 'A' + (13 - shift);
                     }else{
                         c = c + 13;
                     }
                 }
-            }else {
-                write (1, &c ,1);
             }
+            write (1, &c ,1);
             j++;
         }
     }
